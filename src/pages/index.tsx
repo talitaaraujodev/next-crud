@@ -1,3 +1,4 @@
+import Button from "../components/Button";
 import Layout from "../components/Layout";
 import Table from "../components/Table";
 import Cliente from "../core/Cliente";
@@ -22,6 +23,11 @@ export default function Home() {
       className={`flex justify-center items-center h-screen bg-gradient-to-r from-blue-500 to-purple-500`}
     >
       <Layout title="Clientes">
+        <div className="flex justify-end align-center">
+          <Button color="gray" className="mb-4">
+            Novo Cliente
+          </Button>
+        </div>
         <Table
           clientes={clientes}
           clienteSelected={clienteSelected}
