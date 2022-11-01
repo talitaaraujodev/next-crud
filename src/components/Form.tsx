@@ -20,15 +20,21 @@ export default function Form(props: FormProps) {
         false
       )}
 
-      <FormGroup value={nome} text="Nome" className="mb-4" />
-      <FormGroup value={idade} text="Nome" type="number" className="mb-4" />
+      <FormGroup value={nome} text="Nome" className="mb-4" onChange={setNome} />
+      <FormGroup
+        value={idade}
+        text="Idade"
+        type="number"
+        className="mb-4"
+        onChange={setIdade}
+      />
       <div className="flex justify-end mt-7">
         <Button
           color="blue"
           className="mr-2"
           onClick={() => props.onChange?.(new Cliente(id, nome, idade))}
         >
-          {id ? "Alterar" : "Salvar"}
+          {!id ? "Salvar" : "Alterar"}
         </Button>
         <Button color="blue" onClick={props.cancel}>
           Cancelar

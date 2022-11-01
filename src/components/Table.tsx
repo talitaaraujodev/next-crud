@@ -25,6 +25,7 @@ export default function Table(props: TableProps) {
   };
   const renderData = () => {
     return props.clientes?.map((cliente, index) => {
+      console.log(props.clientes);
       return (
         <tr
           key={cliente.id}
