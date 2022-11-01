@@ -3,21 +3,25 @@ export default class Cliente {
     #nome: string
     #idade: number
 
-    constructor(id: string = '', nome: string, idade: number, ) {
-        this.#id = id
+    constructor(nome: string, idade: number, id: string = null){
         this.#nome = nome
         this.#idade = idade
+        this.#id = id
     }
+
     static empty() {
-        return new Cliente('', '', 0)
+        return new Cliente('', 0)
     }
-    get id(): string {
-        return this.#id;
+
+    get id() {
+        return this.#id
     }
-    get nome(): string {
-        return this.#nome;
+
+    get nome() {
+        return this.#nome
     }
-    get idade(): number {
-        return this.#idade;
+
+    get idade() {
+        return this.#idade
     }
 }

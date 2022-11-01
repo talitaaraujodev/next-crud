@@ -5,13 +5,16 @@ import FormGroup from "./FormGroup";
 
 interface FormProps {
   cliente: Cliente;
-  onChange?: (cliente: Cliente) => void;
+  clientChange?: (cliente: Cliente) => void;
   cancel?: () => void;
 }
 export default function Form(props: FormProps) {
   const id = props.cliente?.id;
   const [nome, setNome] = useState<string>(props.cliente?.nome ?? "");
   const [idade, setIdade] = useState<number>(props.cliente?.idade ?? 0);
+
+  console.log(nome);
+  console.log(idade);
   return (
     <div>
       {id ? (
@@ -32,9 +35,9 @@ export default function Form(props: FormProps) {
         <Button
           color="blue"
           className="mr-2"
-          onClick={() => props.onChange?.(new Cliente(id, nome, idade))}
+          onClick={() => props.clientChange?.(new Cliente(nome, +idade, id))}
         >
-          {!id ? "Salvar" : "Alterar"}
+          {id ? "Alterar" : "Salvar"}
         </Button>
         <Button color="blue" onClick={props.cancel}>
           Cancelar

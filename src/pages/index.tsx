@@ -39,7 +39,7 @@ export default function Home() {
             <div className="flex justify-end align-center"></div>
             <Form
               cliente={cliente}
-              onChange={salvarCliente}
+              clientChange={salvarCliente}
               cancel={exibirTable}
             />
           </>
